@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+* {
+  direction: rtl;
+}
+
+body {
+  background-color: var(--gray-1);
+  font-family: var(--font-estedad), sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-tint-5: #D9E1FD;
+  --primary-tint-4: #B2C3FA;
+  --primary-tint-3: #8CA5F8;
+  --primary-tint-2: #6687F5;
+  --primary-tint-1: #3F69F3;
+  --primary: #194BF0;
+  --primary-shade-1: #0D3BD0;
+  --primary-shade-2: #0B2FA6;
+  --primary-shade-3: #08237D;
+  --primary-shade-4: #051753;
+  --primary-shade-5: #030C2A;
+  --secondary-tint-5: #FFF4DC;
+  --secondary-tint-4: #FFEDC4;
+  --secondary-tint-3: #FEDF95;
+  --secondary-tint-2: #FED066;
+  --secondary-tint-1: #FDC236;
+  --secondary: #FDB713;
+  --secondary-shade-1: #D79C10;
+  --secondary-shade-2: #A4770C;
+  --secondary-shade-3: #725209;
+  --secondary-shade-4: #3F2E05;
+  --secondary-shade-5: #261B03;
+  --white: #FFFFFF;
+  --gray-1: #F3F3F3;
+  --gray-2: #D7D7D7;
+  --gray-3: #C2C2C2;
+  --gray-4: #AEAEAE;
+  --gray-5: #9A9A9A;
+  --gray-6: #868686;
+  --gray-7: #727272;
+  --gray-8: #5E5E5E;
+  --gray-9: #494949;
+  --gray-10: #353535;
+  --gray-11: #212121;
+  --black: #0C0C0C;
+
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary-tint-5: var(--primary-tint-5);
+  --color-primary-tint-4: var(--primary-tint-4);
+  --color-primary-tint-3: var(--primary-tint-3);
+  --color-primary-tint-2: var(--primary-tint-2);
+  --color-primary-tint-1: var(--primary-tint-1);
+  --color-primary: var(--primary);
+  --color-primary-shade-1: var(--primary-shade-1);
+  --color-primary-shade-2: var(--primary-shade-2);
+  --color-primary-shade-3: var(--primary-shade-3);
+  --color-primary-shade-4: var(--primary-shade-4);
+  --color-primary-shade-5: var(--primary-shade-5);
+  --color-secondary-tint-5: var(--secondary-tint-5);
+  --color-secondary-tint-4: var(--secondary-tint-4);
+  --color-secondary-tint-3: var(--secondary-tint-3);
+  --color-secondary-tint-2: var(--secondary-tint-2);
+  --color-secondary-tint-1: var(--secondary-tint-1);
+  --color-secondary: var(--secondary);
+  --color-secondary-shade-1: var(--secondary-shade-1);
+  --color-secondary-shade-2: var(--secondary-shade-2);
+  --color-secondary-shade-3: var(--secondary-shade-3);
+  --color-secondary-shade-4: var(--secondary-shade-4);
+  --color-secondary-shade-5: var(--secondary-shade-5);
+  --color-white: var(--white);
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-11: var(--gray-11);
+  --color-black: var(--black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+.d1 {
+  font-size: 54px;
+  line-height: 80%;
+  font-weight: bold;
+}
+
+.d2 {
+  font-size: 54px;
+  line-height: 80%;
+  font-weight: 400;
+}
+
+.d3 {
+  font-size: 54px;
+  line-height: 80%;
+  font-weight: 400;
+}
+
+.active {
+  background: var(--primary);
+  color: white;
+}
+
+#itemcar1::before {
+  content: url(./../public/number/1.png);
+  position: absolute;
+  top: -70px;
+  right: 48px;
+  z-index: -1;
+}
+
+#itemcar3::before {
+  content: url(./../public/number/3.png);
+  position: absolute;
+  top: -70px;
+  right: -10px;
+  z-index: -1;
+}
+
+#itemcar2::before {
+  content: url(./../public/number/2.png);
+  position: absolute;
+  top: -70px;
+  right: 10px;
+  z-index: -1;
+}
+
+#itemcar4::before {
+  content: url(./../public/number/4.png);
+  position: absolute;
+  top: -80px;
+  right: 5px;
+  z-index: -1;
+}
+
+.mySwiper .swiper-slide {
+  width: 288px !important;
+  height: 96px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid var(--color-gray-2);
+  border-radius: 16px;
+  gap: 8px;
+  padding: 8px;
+  background-color: white;
+
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  background-color: var(--secondary) !important;
+}
+
+.mySwiper2 {
+  margin-bottom: 24px;
+}
+
+.mySwiper2 .swiper-slide {
+  width: 100% !important;
+  height: 391px !important;
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--gray-2);
+
+}

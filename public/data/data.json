@@ -1,0 +1,14 @@
+{
+  "logos": [
+    {"id":1,"url":"/logo/BMW.png","name":"BMW"},
+    {"id":2,"url":"/logo/Honda.png","name":"Honda"},
+    {"id":3,"url":"/logo/KIA.png","name":"KIA"},
+    {"id":4,"url":"/logo/KIA1.png","name":"KIA1"},
+    {"id":5,"url":"/logo/KIA2.png","name":"KIA2"},
+    {"id":6,"url":"/logo/lexus-logo.png","name":"lexus-logo"},
+    {"id":7,"url":"/logo/Marcedes.png","name":"Marcedes"},
+    {"id":8,"url":"/logo/Nissan.png","name":"Nissan"},
+    {"id":9,"url":"/logo/Toyota.png","name":"Toyota"}
+    
+  ]
+}

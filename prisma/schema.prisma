@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProductCategory {
+  id        Int      @id @default(autoincrement())
+  url       String
+  name      String?
+  order     Int?
+  createdAt DateTime @default(now())
+}
+
+model Brand {
+  id         Int     @id @default(autoincrement())
+  name       String  @unique
+  country    String?
+  country_fa String?
+  name_fa    String?
+  models     Model[]
+}
+
+model Model {
+  id      Int    @id @default(autoincrement())
+  name    String
+  brandId Int
+  cars    Car[]
+  brand   Brand  @relation(fields: [brandId], references: [id])
+}
+
+model Car {
+  id               Int     @id @default(autoincrement())
+  manufacturedYear Int
+  price            Int?
+  color            String?
+  mileage          Int?
+  vin              String? @unique
+  modelId          Int
+  model            Model   @relation(fields: [modelId], references: [id])
+}
+
+model faqs {
+  id        Int     @id @default(autoincrement())
+  questions String?
+  ask       String?
+}
+
+model comments {
+  id        Int     @id @default(autoincrement())
+  avatar    String
+  user_name String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+}
+
+model Article {
+  id          Int            @id @default(autoincrement())
+  title       String
+  slug        String         @unique
+  content     String
+  summary     String?
+  imageUrl    String?
+  studyTime   Int?
+  visit       Int?
+  thumbnail   String?
+  author      User           @relation(fields: [authorId], references: [id])
+  authorId    Int
+  category    Category?      @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+  tags        Tag[]          @relation("ArticleTags")
+  publishedAt DateTime?
+  updatedAt   DateTime       @updatedAt
+  createdAt   DateTime       @default(now())
+  status Int @default(0)
+}
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  articles  Article[]
+}
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String
+  slug      String    @unique
+  articles  Article[]
+}
+model Tag {
+  id        Int       @id @default(autoincrement())
+  name      String
+  slug      String    @unique
+  articles  Article[] @relation("ArticleTags")
+}
+model contactus {
+  id        Int      @id @default(autoincrement())
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
