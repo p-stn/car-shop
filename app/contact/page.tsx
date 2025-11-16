@@ -7,7 +7,7 @@ import React from 'react'
 import useSWR from "swr";
 
 export default function Contact() {
-    const { data, error, isLoading } = useSWR("/api/contact", fetcher, { revalidateOnFocus: false });
+    const { data, error, isLoading } = useSWR("/api/contact-us", fetcher, { revalidateOnFocus: false });
     return (
         <main>
             <section className='h-[405px] w-full bg-cover bg-no-repeat bg-center flex justify-center items-center bg-[url(/contact.png)] -translate-y-[100px]'>
