@@ -5,14 +5,13 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import useSWR from 'swr';
 import dataLocal from "./../../public/data/data.json"
+import fetcher from '@/lib/fetcher';
 
 export default function Faq() {
     const [openId, setOpenId] = useState<number>(0);
     function openQa(id) {
         setOpenId(prev => (prev === id ? null : id));
     }
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
     const { data, error, isLoading } = useSWR("/api/faqs", fetcher, { revalidateOnFocus: false });
 
     return (

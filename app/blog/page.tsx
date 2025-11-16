@@ -1,12 +1,12 @@
 "use client"
 import { Icon } from '@/components/Icons/Icon'
+import fetcher from '@/lib/fetcher'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr';
 
 export default function Page() {
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
     const { data, error, isLoading } = useSWR("/api/article?limit=6", fetcher, { revalidateOnFocus: false });
 
     return (
