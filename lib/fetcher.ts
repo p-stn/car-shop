@@ -1,12 +1,9 @@
-const fetcher = async (...args) => {
-    const res = await fetch(...args);
-
+const fetcher = async (url: string, options?: RequestInit) => {
+    const res = await fetch(url, options);
     if (!res.ok) {
-        const error = new Error("Request failed");
-        error.status = res.status;
-        error.info = await res.json().catch(() => null);
-        throw error;
+        throw new Error("Request failed");
     }
     return res.json();
 };
-export default fetcher
+
+export default fetcher;
